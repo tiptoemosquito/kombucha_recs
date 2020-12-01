@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :kombuchas
+  has_many :flavors, through: :kombuchas
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
