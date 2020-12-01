@@ -15,20 +15,20 @@ ActiveRecord::Schema.define(version: 2020_12_01_185500) do
   create_table "flavors", force: :cascade do |t|
     t.string "ingredients"
     t.boolean "alcoholic"
-    t.integer "user_id"
-    t.integer "kombucha_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["kombucha_id"], name: "index_flavors_on_kombucha_id"
-    t.index ["user_id"], name: "index_flavors_on_user_id"
   end
 
   create_table "kombuchas", force: :cascade do |t|
     t.string "brand_name"
     t.integer "calories"
     t.string "size"
+    t.integer "user_id"
+    t.integer "flavor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["flavor_id"], name: "index_kombuchas_on_flavor_id"
+    t.index ["user_id"], name: "index_kombuchas_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

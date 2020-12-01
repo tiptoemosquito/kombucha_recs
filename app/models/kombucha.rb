@@ -1,6 +1,7 @@
 class Kombucha < ApplicationRecord
+
     belongs_to :user
-    has_many :flavors
+    belongs_to :flavor
 
     scope :low_calorie, -> { where(calories: 60) }
 

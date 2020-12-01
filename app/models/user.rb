@@ -1,15 +1,15 @@
 class User < ApplicationRecord
-  has_secure_password
-
-  has_many :kombuchas
-  has_many :flavors, through: :kombuchas
-
-  validates :email, presence: true, uniqueness: true
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+
+  has_many :flavors
+  has_many :kombuchas, through: :flavors
+
+  validates :email, presence: true, uniqueness: true
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
