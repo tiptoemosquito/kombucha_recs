@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p><br>
+<div class="container">
+  <h2>Kombuchas</h2>           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Brand Name</th>
+        <th>Size</th>
+        <th>Low Calories?</th>
+        <th>Flavor</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @kombuchas.each do |kombucha| %>
+            <tr>
+                <td><%= kombucha.brand_name %></td>
+                <td><%= link_to kombucha.brand_name, kombucha %></td>
+                <td><%= kombucha.size %></td>
+                <td><%= link_to kombucha.size, kombucha %></td>
+                <td><%= kombucha.low_calorie %></td>
+                <td><%= link_to kombucha.LOw_calorie, kombucha %></td>
+                <td><%= kombucha.flavor.name %></td>
+            </tr>
+            <br>
+            <br>
+        <% end %>
+    </tbody>
+</table><br>
+
+<%= link_to 'Add a new kombucha', new_kombucha_path %><br>
+<br>
+
+</div>

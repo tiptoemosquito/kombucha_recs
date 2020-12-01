@@ -4,7 +4,7 @@ class Kombucha < ApplicationRecord
     belongs_to :flavor
 
     scope :low_calorie, -> { where(calories: 60) }
-
+    accepts_nested_attributes_for :flavor, :reject_if => :all_blank, :allow_destroy => true
     validate :brand, presence: true
     validate :size, presence: true
 end

@@ -1,5 +1,6 @@
 class KombuchasController < ApplicationController
-    
+    before_action :authenticate_user!
+
     def index
         @kombuchas = current_user.kombuchas
     end
@@ -41,9 +42,9 @@ class KombuchasController < ApplicationController
     end
 
     private
-
     #strong params
     def kombucha_params
+        params.require(:kombucha).permit(:brand_name, :calories, :size, :user_id, :flavor_id, flavor_attributes: [:name])
     end
 
 end
