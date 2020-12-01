@@ -5,7 +5,6 @@
     <thead>
       <tr>
         <th>Brand Name</th>
-        <th>Size</th>
         <th>Low Calories?</th>
         <th>Flavor</th>
       </tr>
@@ -16,8 +15,6 @@
             <tr>
                 <td><%= kombucha.brand_name %></td>
                 <td><%= link_to kombucha.brand_name, kombucha %></td>
-                <td><%= kombucha.size %></td>
-                <td><%= link_to kombucha.size, kombucha %></td>
                 <td><%= kombucha.low_calorie %></td>
                 <td><%= link_to kombucha.LOw_calorie, kombucha %></td>
                 <td><%= kombucha.flavor.name %></td>
