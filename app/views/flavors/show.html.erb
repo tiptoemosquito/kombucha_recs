@@ -1,0 +1,8 @@
+<h1>Kombucha flavors:</h1>
+<br>
+<% @flavors.each do |flavor| %>
+    <%= link_to kombucha.brand_name, kombucha_path(kombucha) %> <br>
+<br>
+<% end%>
+
+<button><%= link_to 'Add a new kombucha flavor', new_flavor_kombucha_path(@flavor) %></button>

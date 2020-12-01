@@ -1,10 +1,8 @@
 <h1>Kombucha Flavors</h1>
 <br>
 <% @flavors.each do |flavor| %>
-    <%= flavor.name %> <br>
-    <%= flavor.ingredients %> <br>
-    <%= flavor.alcoholic %> <br>
+    <%= link_to flavor.name, new_flavor_path %>
     <br>
 <% end %>
+<br>
 
-<%= link_to 'Add new flavor', new_flavor_path %>
