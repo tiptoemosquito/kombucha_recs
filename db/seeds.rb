@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Flavor.create(name: "Hibiscus Ginger", ingredients: "kombucha culture, black tea, green tea, kiwi juice, hibiscus, fresh pressed ginger juice, lemon juice", alcolholic: false)
+Flavor.create(name: "Golden Pineapple", ingredients: "kombucha culture, black tea, green tea, kiwi juice, pineapple juice, sage, lemon juice", alcolholic: false)
+Flavor.create(name: "Trilogy", ingredients: "kombucha culture, black tea, green tea, kiwi juice, raspberry juice, fresh pressed ginger juice, lemon juice", alcolholic: false)

@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_12_01_185500) do
 
   create_table "flavors", force: :cascade do |t|
+    t.string "name"
     t.string "ingredients"
     t.boolean "alcoholic"
     t.datetime "created_at", precision: 6, null: false
