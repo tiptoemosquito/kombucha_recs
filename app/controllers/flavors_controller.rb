@@ -18,6 +18,11 @@ class FlavorsController < ApplicationController
     end
 
     def show
+        @flavor = Flavor.find_by(id: params[:id])
+        if @flavor
+            @kombuchas = current_user.kombuchas.where(flavor_id: params[:id])
+            render :show
+        end
     end
 
     def edit
@@ -31,6 +36,6 @@ class FlavorsController < ApplicationController
 
     #strong params
     def flavor_params
-        params.permit(:name, :ingredients, :alcohiolic, :user_id, :kombucha_id)
+        params.permit(:name, :ingredients, :user_id, :kombucha_id)
     end
 end
