@@ -1,0 +1,2 @@
+class Kombucha < ApplicationRecord
+end

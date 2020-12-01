@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :brands
+  resources :kombuchas
   devise_for :users, :controllers => {:registrations => "registrations"}
   #change the route from /users/login to /login route
 
