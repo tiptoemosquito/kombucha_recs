@@ -37,7 +37,7 @@ class KombuchasController < ApplicationController
         redirect_to kombuchas_path, notice: 'Kombucha has been deleted from your list.'
     end
 
-    def low_calorie
+    def calories
         @kombuchas = current_user.kombuchas.calories
     end
 

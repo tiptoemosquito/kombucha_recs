@@ -36,6 +36,6 @@ class FlavorsController < ApplicationController
 
     #strong params
     def flavor_params
-        params.permit(:name, :ingredients, :user_id, :kombucha_id)
+        params.permit(:name, :user_id, :kombucha_id)
     end
 end

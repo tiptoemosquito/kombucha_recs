@@ -1,13 +1,7 @@
 <%= form_for @flavor do |f| %>
-    <div class= "form-group">
+    <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %> <br>
-    <br>
-    <%= f.label :ingredients %>
-    <%= f.text_field :ingredients, class: "form-control" %> <br>
-    <br>
-    <%= f.label :alcoholic %>
-    <%= f.text_field :alcoholic, class: "form-control" %> <br>
     </div>
     <%= f.submit @flavor.persisted? ? "Update Flavor" : "Add Flavor" %>
 <% end %>

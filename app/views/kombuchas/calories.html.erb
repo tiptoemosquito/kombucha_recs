@@ -1,26 +1,23 @@
 <p id="notice"><%= notice %></p><br>
 
-<div>
+<div class="container">
     <h2>My Kombuchas</h2>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>Low Calorie?</th>
                 <th>Brand Name</th>
                 <th>Flavor</th>
+                <th>Calories</th>
             </tr>
         </thead>
 
         <tbody>
             <% @kombucha.each do |kombucha| %>
                 <tr>
-                    <td><%= kombucha.low_calories %></td>
-                    <td><%= link_to kombucha.low_calories, kombucha %></td>
-                    <td><%= kombucha.brand_name %></td>
                     <td><%= link_to kombucha.brand_name, kombucha %></td>
-                    <td><%= kombucha.flavor.name %></td>                    
+                    <td><%= kombucha.flavor.name %></td>
+                    <td><%=  kombucha.calories %></td>                    
                 </tr>
-                <br>
                 <br>
             <% end %>
         </tbody>
