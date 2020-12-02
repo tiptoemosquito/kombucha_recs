@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_185500) do
   create_table "kombuchas", force: :cascade do |t|
     t.string "brand"
     t.boolean "alcohol"
-    t.string "size"
+    t.integer "ounces"
     t.integer "user_id"
     t.integer "flavor_id"
     t.index ["flavor_id"], name: "index_kombuchas_on_flavor_id"

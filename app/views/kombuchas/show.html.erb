@@ -1,10 +1,10 @@
-<h1><%= @kombucha.brand %></h1>
+<h2><%= @kombucha.brand %></h2>
 <br>
-<p><strong> Size: </strong><%= @kombucha.size %></p><br>
+<p><strong> Ounces: </strong><%= @kombucha.ounces %></p><br>
 <p><strong> Flavor: </strong><%= @kombucha.flavor.name %></p><br>
 <p><strong> Alcohol: </strong><%= @kombucha.alcohol %></p><br>
 <br>
 
 <%= link_to 'Edit', edit_kombucha_path(@kombucha) %> |
-<%= link_to 'Delete', @kombucha, method: :delete, data: { confirm: 'Confirm'} %> |
+<%= link_to 'Delete', @kombucha, method: :delete, data: { confirm: 'Delete?'} %> |
 <%= link_to 'See All Flavors', flavors_path %>

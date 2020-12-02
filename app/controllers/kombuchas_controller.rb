@@ -19,7 +19,7 @@ class KombuchasController < ApplicationController
     def create 
         @kombucha = current_user.kombuchas.new(kombucha_params)
         if @kombucha.save
-            redirect_to @kombucha, notice: 'Success! You have added a new kombucha to your list.'
+            redirect_to @kombucha, notice: 'Success! New Kombucha added.'
         else 
             render :new
         end
@@ -49,7 +49,7 @@ class KombuchasController < ApplicationController
     end
     #strong params
     def kombucha_params
-        params.require(:kombucha).permit(:brand, :alcohol, :size, :user_id, :flavor_id, flavor_attributes: [:name])
+        params.require(:kombucha).permit(:brand, :alcohol, :ounces, :user_id, :flavor_id, flavor_attributes: [:name])
     end
 
 end
