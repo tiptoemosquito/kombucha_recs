@@ -19,7 +19,7 @@ class KombuchasController < ApplicationController
     def create 
         @kombucha = current_user.kombuchas.new(kombucha_params)
         if @kombucha.save
-            redirect_to @kombucha, notice: 'Success! New Kombucha added.'
+            redirect_to @kombucha, notice: 'Success! Kombucha added.'
         else 
             render :new
         end
@@ -27,7 +27,7 @@ class KombuchasController < ApplicationController
 
     def update
         if @kombucha.update(kombucha_params)
-            redirect_to @kombucha, notice: 'Your kombucha list has been updated.'
+            redirect_to @kombucha, notice: 'Updated!'
         else
             render :edit
         end
@@ -35,7 +35,7 @@ class KombuchasController < ApplicationController
 
     def destroy
         @kombucha.destroy
-        redirect_to kombuchas_path, notice: 'Kombucha has been deleted from your list.'
+        redirect_to kombuchas_path, notice: 'Kombucha deleted.'
     end
 
     def alcohol
@@ -49,7 +49,7 @@ class KombuchasController < ApplicationController
     end
     #strong params
     def kombucha_params
-        params.require(:kombucha).permit(:brand, :alcohol, :ounces, :user_id, :flavor_id, flavor_attributes: [:name])
+        params.require(:kombucha).permit(:brand, :ounces, :alcohol, :user_id, :flavor_id, flavor_attributes: [:name])
     end
 
 end

@@ -10,7 +10,7 @@ class FlavorsController < ApplicationController
     end
 
     def create
-        @flavor = current_user.flavors.new(flavor_params)
+        @flavor = current_user.flavors.build(flavor_params)
         if @flavor.save
             redirect_to flavor_path(@flavor)
         else

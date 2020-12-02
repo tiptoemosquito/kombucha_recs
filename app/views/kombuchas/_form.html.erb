@@ -13,10 +13,10 @@
     <br>
     <%= f.label :flavor %><br>
     <br>
-    <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, prompt: "Choose a flavor from the list:") %><br>
+    <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, prompt: "Choose Flavor") %><br>
     <br>
     <%= f.fields_for :flavor, Flavor.new do |kombucha_flavor| %><br>
-    <%= kombucha_flavor.label "Create a new flavor here:"%><br>
+    <%= kombucha_flavor.label "Create New Flavor"%><br>
     <br>
     <%= kombucha_flavor.text_field :name %>
     <% end%>
