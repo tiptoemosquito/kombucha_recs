@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end 
 
-  root to: 'welcome#home'
+  root to: 'welcome#kombucha_home'
   
 end

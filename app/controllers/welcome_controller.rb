@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-    def home     
+    def kombucha_home     
     end
 
 end
