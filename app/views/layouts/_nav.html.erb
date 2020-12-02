@@ -2,7 +2,7 @@
     <ul>
         <li><%= link_to 'Welcome', root_path %></li><br>
         <% if !user_signed_in? %>
-            <li><%= link_to 'New User? Sign Up Here', new_user_registration_path %></li><br>
+            <li><%= link_to 'New User? Sign up', new_user_registration_path %></li><br>
             <li><%= link_to 'Sign in', new_user_session_path %></li><br>
         <% else %>
             <li> Welcome back <%= current_user.email %> !</li><br>

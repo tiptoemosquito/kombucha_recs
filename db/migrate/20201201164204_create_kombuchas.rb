@@ -6,7 +6,6 @@ class CreateKombuchas < ActiveRecord::Migration[6.0]
       t.string :size
       t.belongs_to :user
       t.belongs_to :flavor
-      t.timestamps
     end
   end
 end
