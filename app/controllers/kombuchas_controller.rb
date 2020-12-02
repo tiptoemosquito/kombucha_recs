@@ -17,7 +17,7 @@ class KombuchasController < ApplicationController
     end
 
     def create 
-        @kombucha = current_user.kombuchas.new(kombucha_params)
+        @kombucha = current_user.kombuchas.build(kombucha_params)
         if @kombucha.save
             redirect_to @kombucha, notice: 'Success! Kombucha added.'
         else 

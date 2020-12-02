@@ -13,7 +13,7 @@
     <tbody>
         <% @kombuchas.each do |k| %>
             <tr>
-                <td><%= k.brand %></td>
+                <td><%= link_to k.brand, kombucha_path(kombucha) %></td>
                 <td><%= k.flavor.name %></td>
                 <td><%= k.alcohol %></td>
             </tr>
