@@ -2,7 +2,7 @@ class FlavorsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @flavors = Flavor.all
+        @flavors = current_user.flavors
     end
 
     def new
