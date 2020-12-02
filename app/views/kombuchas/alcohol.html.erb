@@ -5,7 +5,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Brand Name</th>
+                <th>Brand</th>
                 <th>Flavor</th>
                 <th>Alcohol</th>
             </tr>
@@ -14,7 +14,7 @@
         <tbody>
             <% @kombucha.each do |kombucha| %>
                 <tr>
-                    <td><%= link_to kombucha.brand_name, kombucha %></td>
+                    <td><%= link_to kombucha.brand, kombucha %></td>
                     <td><%= kombucha.flavor.name %></td>
                     <td><%=  kombucha.alcohol %></td>                    
                 </tr>

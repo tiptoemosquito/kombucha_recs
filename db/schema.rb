@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_185500) do
   end
 
   create_table "kombuchas", force: :cascade do |t|
-    t.string "brand_name"
+    t.string "brand"
     t.boolean "alcohol"
     t.string "size"
     t.integer "user_id"

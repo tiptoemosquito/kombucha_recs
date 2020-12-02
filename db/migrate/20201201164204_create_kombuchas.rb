@@ -1,7 +1,7 @@
 class CreateKombuchas < ActiveRecord::Migration[6.0]
   def change
     create_table :kombuchas do |t|
-      t.string :brand_name
+      t.string :brand
       t.boolean :alcohol
       t.string :size
       t.belongs_to :user

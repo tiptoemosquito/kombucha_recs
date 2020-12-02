@@ -49,7 +49,7 @@ class KombuchasController < ApplicationController
     end
     #strong params
     def kombucha_params
-        params.require(:kombucha).permit(:brand_name, :alcohol, :size, :user_id, :flavor_id, flavor_attributes: [:name])
+        params.require(:kombucha).permit(:brand, :alcohol, :size, :user_id, :flavor_id, flavor_attributes: [:name])
     end
 
 end

@@ -4,5 +4,5 @@ class Kombucha < ApplicationRecord
 
     scope :alcohol, -> {where(alcohol: false)}
     accepts_nested_attributes_for :flavor, :reject_if => :all_blank, :allow_destroy => true
-    validates :brand_name, presence: true
+    validates :brand, presence: true
 end
