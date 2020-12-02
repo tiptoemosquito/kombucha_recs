@@ -1,25 +1,26 @@
 <%= form_for(@kombucha) do |f| %>
-    <%= f.label :brand %><br>
+    <%= f.label :brand, "Brand Name:"%>
     <br>
     <%= f.text_field :brand %><br>
     <br>
-    <%= f.label :ounces, "Ounces:" %><br>
+    <%= f.label :ounces, "Ounces:" %>
     <br>
     <%= f.number_field :ounces %><br>
     <br>
-    <%= f.label :alcohol, "Alcohol?" %><br>
+    <%= f.label :alcohol, "Alcohol:" %>
     <br>
     <%= f.check_box :alcohol %><br>
     <br>
-    <%= f.label :flavor %><br>
+    <%= f.label :flavor, "Flavor:"%>
     <br>
     <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, prompt: "Choose Flavor") %><br>
     <br>
     <%= f.fields_for :flavor, Flavor.new do |kombucha_flavor| %><br>
-    <%= kombucha_flavor.label "Create New Flavor"%><br>
+    <%= kombucha_flavor.label "Create Flavor:"%>
     <br>
     <%= kombucha_flavor.text_field :name %>
     <% end%>
+    <br>
     <br>
     <%= f.submit class: "btn btn-primary" %>
 <% end %>
