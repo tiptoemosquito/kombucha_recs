@@ -11,12 +11,12 @@
     </thead>
 
     <tbody>
-        <% @kombuchas.each do |kombucha| %>
+        <% @kombuchas.each do |k| %>
             <tr>
-                <td><%= kombucha.brand_name %></td>
-                <td><%= link_to kombucha.brand_name, kombucha %></td>
-                <td><%= kombucha.flavor.name %></td>
-                <td><%= kombucha.calories %></td>
+                <td><%= k.brand_name %></td>
+                <td><%= link_to k.brand_name, k %></td>
+                <td><%= k.flavor.name %></td>
+                <td><%= k.calories %></td>
             </tr>
             <br>
             <br>
@@ -24,7 +24,7 @@
     </tbody>
 </table><br>
 
-<%= link_to 'Add kombucha', new_kombucha_path %><br>
+<button><%= link_to 'Add kombucha', new_kombucha_path %></button><br>
 <br>
 
 </div>

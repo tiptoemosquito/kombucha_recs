@@ -1,19 +1,15 @@
 Rails.application.routes.draw do
-  get 'kombuchas/low_calories', to: 'kombuchas#low_calories'
+  get 'kombuchas/calories', to: 'kombuchas#calories'
   resources :kombuchas
   resources :flavors, only: [:index, :show] do
     resources :kombuchas, only: [:index, :show, :new]
   end
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
-  #change the route from /users/login to /login route
+  devise_for :users, :controllers => {:registrations => 'registrations', omniauth_callbacks: 'callbacks'}
 
   devise_scope :user do 
-    get 'login', to: 'devise/sessions#new'
-  end 
-
-  devise_scope :user do 
-    get 'signup', to: 'devise/registrations#new'
+    get 'login', to: 'devise/sessions#new', as: 'login'
+    get 'signup', to: 'devise/registrations#new', as: 'signup'
   end 
 
   root to: 'welcome#kombucha_home'

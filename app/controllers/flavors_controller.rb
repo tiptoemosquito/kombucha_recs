@@ -1,4 +1,5 @@
 class FlavorsController < ApplicationController
+    before_action :authenticate_user!
 
     def index
         @flavors = Flavor.all
@@ -9,7 +10,7 @@ class FlavorsController < ApplicationController
     end
 
     def create
-        @flavor = current_user.flavors.build(flavor_params)
+        @flavor = current_user.flavors.new(flavor_params)
         if @flavor.save
             redirect_to flavor_path(@flavor)
         else
@@ -30,12 +31,15 @@ class FlavorsController < ApplicationController
     end
 
     def update
+        # @flavor = current_user.kombuchas.find_by(params[:id])
+        # @flavor.update!(flavor_params)
+        # redirect_to 
     end
 
     private
 
     #strong params
     def flavor_params
-        params.permit(:name, :user_id, :kombucha_id)
+        params.require(:flavor).permit(:name, :user_id, :kombucha_id)
     end
 end

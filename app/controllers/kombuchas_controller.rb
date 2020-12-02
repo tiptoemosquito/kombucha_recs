@@ -1,4 +1,5 @@
 class KombuchasController < ApplicationController
+    before_action :kombucha_value, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
 
     def index
@@ -16,7 +17,7 @@ class KombuchasController < ApplicationController
     end
 
     def create 
-        @kombucha = current_user.kombuchas.build(kombucha_params)
+        @kombucha = current_user.kombuchas.new(kombucha_params)
         if @kombucha.save
             redirect_to @kombucha, notice: 'Success! You have added a new kombucha to your list.'
         else 
@@ -42,9 +43,13 @@ class KombuchasController < ApplicationController
     end
 
     private
+
+    def kombucha_value
+        @kombucha = Kombucha.find_by(params[:id])
+    end
     #strong params
     def kombucha_params
-        params.require(:kombucha).permit(:brand_name, :calories, :size, :user_id, :flavor_id, flavor_attributes: [:name])
+        params.require(:kombucha).permit(:brand_name, :calories, :size, :user_id, :flavor_id, flavor_attributes: [:name, :id])
     end
 
 end
