@@ -19,7 +19,7 @@ class KombuchasController < ApplicationController
     def create 
         @kombucha = current_user.kombuchas.build(kombucha_params)
         if @kombucha.save
-            redirect_to @kombucha, notice: 'Success! Kombucha added.'
+            redirect_to @kombucha, notice: 'Success! Kombucha added!'
         else 
             render :new
         end
@@ -35,7 +35,7 @@ class KombuchasController < ApplicationController
 
     def destroy
         @kombucha.destroy
-        redirect_to kombuchas_path, notice: 'Kombucha deleted.'
+        redirect_to kombuchas_path, notice: 'Kombucha deleted!'
     end
 
     def alcohol
