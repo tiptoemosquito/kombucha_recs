@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_185500) do
 
   create_table "kombuchas", force: :cascade do |t|
     t.string "brand_name"
-    t.integer "calories"
+    t.boolean "alcohol"
     t.string "size"
     t.integer "user_id"
     t.integer "flavor_id"

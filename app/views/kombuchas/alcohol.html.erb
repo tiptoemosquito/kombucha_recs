@@ -7,7 +7,7 @@
             <tr>
                 <th>Brand Name</th>
                 <th>Flavor</th>
-                <th>Calories</th>
+                <th>Alcohol</th>
             </tr>
         </thead>
 
@@ -16,7 +16,7 @@
                 <tr>
                     <td><%= link_to kombucha.brand_name, kombucha %></td>
                     <td><%= kombucha.flavor.name %></td>
-                    <td><%=  kombucha.calories %></td>                    
+                    <td><%=  kombucha.alcohol %></td>                    
                 </tr>
                 <br>
             <% end %>

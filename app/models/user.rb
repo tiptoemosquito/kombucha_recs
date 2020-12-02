@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-  has_many :flavors
-  has_many :kombuchas, through: :flavors
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  has_many :kombuchas
+  has_many :flavors, through: :kombuchas
 
 
   def self.from_omniauth(auth)

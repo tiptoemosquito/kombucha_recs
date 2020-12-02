@@ -38,8 +38,8 @@ class KombuchasController < ApplicationController
         redirect_to kombuchas_path, notice: 'Kombucha has been deleted from your list.'
     end
 
-    def calories
-        @kombuchas = current_user.kombuchas.calories
+    def alcohol
+        @kombuchas = current_user.kombuchas.alcohol
     end
 
     private
@@ -49,7 +49,7 @@ class KombuchasController < ApplicationController
     end
     #strong params
     def kombucha_params
-        params.require(:kombucha).permit(:brand_name, :calories, :size, :user_id, :flavor_id, flavor_attributes: [:name, :id])
+        params.require(:kombucha).permit(:brand_name, :alcohol, :size, :user_id, :flavor_id, flavor_attributes: [:name])
     end
 
 end
