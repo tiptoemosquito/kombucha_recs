@@ -45,7 +45,7 @@ class KombuchasController < ApplicationController
     private
 
     def kombucha_value
-        @kombucha = Kombucha.find_by(params[:id])
+        @kombucha = current_user.kombuchas.find_by(params[:id])
     end
     #strong params
     def kombucha_params

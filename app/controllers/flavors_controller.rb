@@ -19,7 +19,7 @@ class FlavorsController < ApplicationController
     end
 
     def show
-        @flavor = Flavor.find_by(id: params[:id])
+        @flavor = current_user.flavors.find_by(id: params[:id])
         if @flavor
             @kombuchas = current_user.kombuchas.where(flavor_id: params[:id])
             render :show
@@ -30,11 +30,11 @@ class FlavorsController < ApplicationController
         @flavor = Flavor.find_by(id: params[:id])
     end
 
-    def update
-        # @flavor = current_user.kombuchas.find_by(params[:id])
-        # @flavor.update!(flavor_params)
-        # redirect_to 
-    end
+    # def update
+    #      @flavor = current_user.kombuchas.find_by(params[:id])
+    #      @flavor.update!(flavor_params)
+    #      redirect_to 
+    # end
 
     private
 
