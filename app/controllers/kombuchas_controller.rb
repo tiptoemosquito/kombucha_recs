@@ -1,5 +1,5 @@
 class KombuchasController < ApplicationController
-    before_action :kombucha_value, only: [:show, :edit, :update, :destroy]
+    before_action :set_kombucha, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
 
     def index
@@ -48,7 +48,7 @@ class KombuchasController < ApplicationController
 
     private
 
-    def kombucha_value
+    def set_kombucha
         @kombucha = current_user.kombuchas.find_by(params[:id])
         if !@kombucha
             redirect_to kombuchas_path, notice: "Access Denied!"
