@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h2>Kombuchas</h2>           
+  <h2>Kombuchas:</h2>           
   <table class="table">
     <thead>
       <tr>
         <th>Brand Name</th>
         <th>Flavor</th>
-        <th>Alcohol</th>
+        <th>Ounces</th>
       </tr>
     </thead>
 
@@ -15,14 +15,14 @@
             <tr>
                 <td><%= link_to kombucha.brand, kombucha %></td>
                 <td><%= kombucha.flavor.name %></td>
-                <td><%= kombucha.alcohol %></td>
+                <td><%= kombucha.ounces %></td>
             </tr>
         <% end %>
     </tbody>
 </table><br>
 
 <button><%= link_to 'Add New Kombucha', new_kombucha_path %></button><br><br>
-<button><%= link_to 'Kombuchas with alcohol', kombuchas_alcohol_path %></button><br>
+<button><%= link_to 'Kombuchas w/alcohol', kombuchas_alcohol_path %></button><br>
 <br>
 
 </div>
