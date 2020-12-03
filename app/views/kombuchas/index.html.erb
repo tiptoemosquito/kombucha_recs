@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
   <h2>Kombuchas:</h2>           
-  <table class="table">
-    <thead>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
       <tr>
         <th>Brand Name</th>
         <th>Flavor</th>
@@ -21,8 +21,8 @@
     </tbody>
 </table><br>
 
-<button><%= link_to 'Add New Kombucha', new_kombucha_path %></button><br><br>
-<button><%= link_to 'Kombuchas w/alcohol', kombuchas_alcohol_path %></button><br>
+<%= link_to 'Add New Kombucha', new_kombucha_path, class: "btn btn-info" %><br><br>
+<%= link_to 'Alcoholic Kombuchas', kombuchas_alcohol_path, class: "btn btn-info" %><br>
 <br>
 
 </div>
