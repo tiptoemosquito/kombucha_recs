@@ -3,9 +3,9 @@
 <br>
 <p><strong> Ounces: </strong><%= @kombucha.ounces %></p>
 <p><strong> Flavor: </strong><%= @kombucha.flavor.name %></p>
-<p><strong> Alcohol: </strong><%= @kombucha.alcohol %></p> <br>
+<p><strong> Alcohol: </strong><%= @kombucha.alcohol %></p>
 <br>
 
 <%= link_to 'Edit', edit_kombucha_path(@kombucha) %> |
-<%= link_to 'Delete', @kombucha, method: :delete, data: {confirm: 'Delete?'} %> |
+<%= link_to 'Delete', @kombucha, method: :delete, data: {confirm: 'Confirm'} %> |
 <%= link_to 'List All Flavors', flavors_path %>

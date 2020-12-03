@@ -26,9 +26,9 @@ class FlavorsController < ApplicationController
         end
     end
 
-    def edit
-        @flavor = Flavor.find_by(id: params[:id])
-    end
+    # def edit
+    #     @flavor = Flavor.find_by(id: params[:id])
+    # end
 
     # def update
     #      @flavor = current_user.kombuchas.find_by(params[:id])
