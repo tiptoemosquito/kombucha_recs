@@ -1,5 +1,7 @@
 <div class="container">
-  <h2>Kombuchas:</h2>           
+  <hr class="my-4">
+  <h2 class="font-weight-lighter"><%= current_user.username %>'s Kombuchas</h2> 
+  <br>        
   <table class="table table-striped table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
@@ -21,7 +23,7 @@
 </table><br>
 
 <%= link_to 'Add New Kombucha', new_kombucha_path, class: "btn btn-info" %><br><br>
-<%= link_to 'Alcoholic Kombuchas', kombuchas_alcohol_path, class: "btn btn-info" %><br>
-<br>
-
+<%= link_to 'Alcoholic Kombuchas', kombuchas_alcohol_path, class: "btn btn-info" %><br><br>
+    <%= link_to 'Back', kombuchas_path, class: "btn btn-info" %>
+  <hr class="my-4">
 </div>
