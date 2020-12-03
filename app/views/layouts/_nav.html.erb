@@ -1,13 +1,25 @@
-<nav>
-    <ul>
-        <li><%= link_to 'Home', root_path %></li><br>
-        <% if !user_signed_in? %>
-            <li><%= link_to 'New User? Sign-up', new_user_registration_path %></li><br>
-            <li><%= link_to 'Log in', new_user_session_path %></li><br>
-        <% else %>
-            <li> Welcome back, <%= current_user.username %>!</li><br>
-            <li><%= link_to 'Kombuchas', kombuchas_path %></li><br>
-            <li><%= link_to 'Log Out', destroy_user_session_path, method: "delete" %></li>
-        <% end%>
-    </ul>
-</nav>
+
+<header class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <%= link_to 'Home', root_path, class: "navbar-brand" %><br>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">        
+                <% if user_signed_in? %>
+                     Welcome, <%= current_user.username %>!<br>
+                    <br>
+                    <%= link_to 'Kombuchas', kombuchas_path %><br>
+                    <br>
+                    <%= link_to 'Log Out', destroy_user_session_path, method: "delete" %></li>
+                <% else %>
+                    <%= link_to 'Sign-up', new_user_registration_path %><br>
+                    <br>
+                    <%= link_to 'Log in', new_user_session_path %><br>
+                <% end%>
+            </ul>
+            </div>
+        </div>
+    </nav>
+</header>
