@@ -18,9 +18,9 @@
     or
     <br>
     <%= f.fields_for :flavor, Flavor.new do |kombucha_flavor| %><br>
-    <%= kombucha_flavor.label "New Flavor:"%>
-    <br>
-    <%= kombucha_flavor.text_field :name %>
+        <%= kombucha_flavor.label "New Flavor:"%>
+        <br>
+        <%= kombucha_flavor.text_field :name %>
     <% end%>
     <br>
     <br>
