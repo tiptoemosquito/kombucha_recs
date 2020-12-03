@@ -21,7 +21,7 @@ class FlavorsController < ApplicationController
     def show
         @flavor = current_user.flavors.find_by(id: params[:id])
         if @flavor
-            @kombuchas = current_user.kombuchas.where(flavor_id: params[:id])
+            @kombuchas = current_user.kombuchas.where(flavor_id: params[:flavor_id])
             render :show
         end
     end

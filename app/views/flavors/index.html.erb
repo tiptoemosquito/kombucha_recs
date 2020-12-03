@@ -1,7 +1,7 @@
-<h1>Kombucha Flavors:</h1>
+<h1><%= current_user.username %>'s kombucha flavors:</h1>
 <br>
 <% @flavors.each do |flavor| %>
-    <%= link_to flavor.name, flavor_kombucha_path(flavor, @kombucha) %>
+    <li><%= link_to flavor.name, flavor_kombuchas_path(flavor, @kombucha) %></li><br>
     <br>
 <% end %>
 <br>

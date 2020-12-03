@@ -3,14 +3,18 @@ class KombuchasController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @kombuchas = current_user.kombuchas
+        if params[:flavor_id]
+            @kombuchas = Flavor.find(params[:flavor_id]).kombuchas
+        else
+            @kombuchas = current_user.kombuchas
+        end
     end
 
     def show
     end
 
     def new
-        @kombucha = Kombucha.new(user_id: params[:user_id])
+        @kombucha = Kombucha.new(flavor_id: params[:flavor_id])
     end
 
     def edit
@@ -46,6 +50,9 @@ class KombuchasController < ApplicationController
 
     def kombucha_value
         @kombucha = current_user.kombuchas.find_by(params[:id])
+        if !@kombucha
+            redirect_to kombuchas_path, notice: "Access Denied!"
+        end
     end
     #strong params
     def kombucha_params
