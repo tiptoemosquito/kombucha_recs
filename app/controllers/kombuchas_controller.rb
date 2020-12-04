@@ -14,7 +14,12 @@ class KombuchasController < ApplicationController
     end
 
     def new
-        @kombucha = Kombucha.new(flavor_id: params[:flavor_id])
+        if params[:flavor_id]
+            @flavor = current_user.flavors.find_by(id: params[:kombucha_id])
+            @kombucha = current_user.kombuchas.build(flavor_id: params[:flavor_id])
+        else
+            @kombucha = current_user.kombuchas.build
+        end
     end
 
     def create 
@@ -48,8 +53,9 @@ class KombuchasController < ApplicationController
 
     private
 
+
     def set_kombucha
-        @kombucha = current_user.kombuchas.find_by(params[:id])
+        @kombucha = current_user.kombuchas.find_by(id: params[:id])
         if !@kombucha
             redirect_to kombuchas_path, notice: "Access Denied!"
         end

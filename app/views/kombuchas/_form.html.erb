@@ -1,23 +1,27 @@
 <%= form_for(@kombucha) do |f| %>
     <div class="form-group">
-    <%= f.text_field :brand, class: "form-control", placeholder:"Brand Name" %><br>
+        <%= f.text_field :brand, class: "form-control", placeholder:"Brand Name" %><br>
     </div>
     <div class="form-group">
-    <%= f.number_field :ounces, class: "form-control", placeholder:"Ounces" %><br>
+        <%= f.number_field :ounces, class: "form-control", placeholder:"Ounces" %><br>
     </div>
-    <%= f.fields_for :flavor, Flavor.new do |kombucha_flavor| %>
+
+    <% if @flavor %>
+        <%= f.hidden_field :flavor_id %>
+    <% else %>
         <div class="form-group">
-        <%= kombucha_flavor.text_field :name, class: "form-control", placeholder:" New Flavor" %>
+            <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, prompt: "Choose Flavor") %>
         </div>
         OR
-    <div class="form-group">
-    <br>
-    <%= f.collection_select(:flavor_id, Flavor.all, :id, :name, prompt: "Choose Flavor") %>
-    </div>
-    <div class="form-group">
-    <%= f.label :alcohol, "Alcohol? Y/N" %>
-    <%= f.check_box :alcohol %><br>
-    </div>
-    <% end%>
-    <%= f.submit class: "btn btn-info"%>
+        <%= f.fields_for :flavor, @kombucha.build_flavor do |kombucha_flavor| %>
+            <div class="form-group">
+                <%= kombucha_flavor.text_field :name, class: "form-control", placeholder:" New Flavor" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :alcohol, "Alcohol? Y/N" %>
+                <%= f.check_box :alcohol %><br>
+            </div>
+        <% end %>
+        <%= f.submit class: "btn btn-info"%>
+    <% end %>
 <% end %>
