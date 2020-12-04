@@ -4,7 +4,7 @@ class KombuchasController < ApplicationController
 
     def index
         if params[:flavor_id]
-            @kombuchas = Flavor.find_by(params[:flavor_id]).kombuchas
+            @kombuchas = Flavor.find(params[:flavor_id]).kombuchas
         else
             @kombuchas = current_user.kombuchas
         end
@@ -26,15 +26,15 @@ class KombuchasController < ApplicationController
         end
     end
 
+    def edit
+    end
+    
     def update
         if @kombucha.update(kombucha_params)
             redirect_to @kombucha, notice: 'Updated!'
         else
             render :edit
         end
-    end
-
-    def edit
     end
 
     def destroy

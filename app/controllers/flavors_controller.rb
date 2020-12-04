@@ -30,12 +30,6 @@ class FlavorsController < ApplicationController
         @flavor = Flavor.find_by(id: params[:id])
     end
 
-    # def update
-    #      @flavor = current_user.kombuchas.find_by(params[:id])
-    #      @flavor.update!(flavor_params)
-    #      redirect_to 
-    # end
-
     private
 
     #strong params
