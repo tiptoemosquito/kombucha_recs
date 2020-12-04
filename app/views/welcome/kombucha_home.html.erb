@@ -1,15 +1,18 @@
 <body>
     <div class ="center">
       <hr class="my-4">
-        <div class="jumbotron">
+        <div class="jumbotron bg-light">
             <div class="container">
-            <h1 class="display-4">Welcome!</h1>
-            <p class="lead">Manage your Kombucha Records with this App.</p>
+            <h1 class="display-4 text-center text-dark">Welcome!</h1>
+            <p class="lead font-weight-lighter text-center">Manage your Kombucha Records with this App.</p>
             <% if !user_signed_in? %>
                 <h4>Login to enter, or signup now!</h4>
-            <% else %>
-            <br>
-                <h3>Good to see you, <%= current_user.username %>.</h1>
+                <% else %>
+                <br>
+                <h3 class="text-center font-italic font-weight-light">Hello, <%= current_user.username %>!</h1>
+                <br>
+                <img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2018/07/best-kombucha-brands-health-ade-gts-kevita.jpg?fit=1200%2C879&ssl=1" class="img-fluid" alt="Responsive image">
+                <br>
             <% end%>
         </div>
     </div>
