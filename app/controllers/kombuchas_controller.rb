@@ -4,7 +4,7 @@ class KombuchasController < ApplicationController
 
     def index
         if params[:flavor_id]
-            @kombuchas = Flavor.find(params[:flavor_id]).kombuchas
+            @kombuchas = Flavor.find_by(params[:flavor_id]).kombuchas
         else
             @kombuchas = current_user.kombuchas
         end
