@@ -10,6 +10,9 @@ class KombuchasController < ApplicationController
         end
     end
 
+    def show
+    end
+
     def new
         @kombucha = Kombucha.new(flavor_id: params[:flavor_id])
     end
@@ -21,9 +24,6 @@ class KombuchasController < ApplicationController
         else 
             render :new
         end
-    end
-
-    def show
     end
 
     def update

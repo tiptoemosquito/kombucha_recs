@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :kombuchas
   has_many :flavors, through: :kombuchas
+  validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
 
