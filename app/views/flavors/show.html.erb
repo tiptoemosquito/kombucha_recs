@@ -1,9 +1,11 @@
-<h2>Kombuchas by flavor:</h2>
+<hr class="my-4">
+<h2 class="font-weight-lighter">Kombuchas by flavor:</h2>
 <br>
 <% @kombuchas.each do |kombucha| %>
 <%= link_to kombucha.brand, kombucha_path(kombucha) %><br>
 <br>
 <% end%>
 <div>
-    <button><%= link_to 'Add another Flavor', new_flavor_kombucha_path(@flavor) %></button>
+<%= link_to 'Add another Flavor', new_flavor_kombucha_path(@flavor), class: "btn btn-info" %>
 </div>
+<hr class="my-4">

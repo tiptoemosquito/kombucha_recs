@@ -18,7 +18,6 @@
     <%= f.label :alcohol, "Alcohol? Y/N" %>
     <%= f.check_box :alcohol %><br>
     </div>
-    <hr class="my-4">
     <% end%>
-    <%= f.submit @kombucha.persisted? class: "btn btn-info"%>
+    <%= f.submit @kombucha.persisted?, class: "btn btn-info"%>
 <% end %>
