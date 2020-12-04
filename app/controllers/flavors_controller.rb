@@ -2,7 +2,7 @@ class FlavorsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @flavors = current_user.flavors
+        @flavors = current_user.flavors.uniq
     end
 
     def new
@@ -26,14 +26,10 @@ class FlavorsController < ApplicationController
         end
     end
 
-    def edit
-        @flavor = Flavor.find_by(id: params[:id])
-    end
-
     private
 
-    #strong params
     def flavor_params
         params.require(:flavor).permit(:name, :user_id, :kombucha_id)
     end
+
 end
