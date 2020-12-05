@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning"> 
-<%= link_to 'Kombucha App', root_path, class: "navbar-brand text-light" %>
+<%= link_to 'KombuchApp', root_path, class: "navbar-brand text-light" %>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,8 +8,8 @@
         <li class="nav-item active">
         <% if user_signed_in? %>
             <li><%= link_to 'Kombuchas', kombuchas_path, class: "nav-link text-black-50" %></li>
-            <li><%= link_to 'Flavors', flavors_path, class: "nav-link text-black-50" %></li>                
-            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link text-black-50" %></li>
+            <li><%= link_to 'Flavors', flavors_path, class: "nav-link text-black-50" %></li>         
+            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link text-black-50" %></li> 
         <% else %>
             <li><%= link_to 'Sign-up', new_user_registration_path, class: "nav-link text-black-50" %></li>
             <li><%= link_to 'Log in', new_user_session_path, class: "nav-link text-black-50" %></li>
