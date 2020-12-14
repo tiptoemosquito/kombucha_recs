@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'kombuchas/alcohol', to: 'kombuchas#alcohol'
+  resources :flavors
   resources :kombuchas
+  
   resources :flavors, only: [:index, :show] do
     resources :kombuchas, only: [:index, :show, :new]
   end

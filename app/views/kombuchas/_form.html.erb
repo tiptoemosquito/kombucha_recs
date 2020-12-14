@@ -1,5 +1,5 @@
 <%= form_for(@kombucha) do |f| %>
-    <div class="field_with_errors">
+    <div id="field_with_errors">
     <% if @kombucha.errors.any? %>
         <%= @kombucha.errors.full_messages.each do |error_msg| %>
         <span class="alert alert-danger" role="alert"><strong><%= error_msg %></strong></span>
@@ -23,7 +23,7 @@
         OR
         <%= f.fields_for :flavor, @kombucha.build_flavor do |kombucha_flavor| %>
             <div class="form-group">
-                <%= kombucha_flavor.text_field :name, class: "form-control", placeholder:" New Flavor" %>
+                <%= kombucha_flavor.text_field :name, class: "form-control", placeholder: "New Flavor" %>
             </div>
             <div class="form-group">
                 <%= f.label :alcohol, "Alcohol?" %>

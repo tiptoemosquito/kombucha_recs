@@ -68,7 +68,7 @@ class KombuchasController < ApplicationController
     def set_kombucha
         @kombucha = current_user.kombuchas.find_by(id: params[:id])
         if !@kombucha
-            redirect_to kombuchas_path, notice: "Access Denied!"
+            redirect_to kombuchas_path
         end
     end
 
