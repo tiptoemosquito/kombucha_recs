@@ -2,46 +2,31 @@ class FlavorsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-
         @flavors = current_user.flavors.uniq
-
     end
 
     def new
-
         @flavor = Flavor.new
-
     end
 
     def create
-
         @flavor = current_user.flavors.build(flavor_params)
-
         if @flavor.save
             redirect_to flavor_path(@flavor)
         else
-            redirect_to new_flavor_path
+            redirect_to :new
         end
-
     end
 
     def show
-
         @flavor = current_user.flavors.find_by(id: params[:id])
-
-        if @flavor
-            @kombuchas = current_user.kombuchas.where(flavor_id: params[:id])
-            render :show
-        end
-
+        render :show
     end
 
     private
 
     def flavor_params
-
-        params.require(:flavor).permit(:name, :user_id, :kombucha_id)
-        
+        params.require(:flavor).permit(:name, :user_id, :kombucha_id)     
     end
 
 end
