@@ -63,6 +63,7 @@ class KombuchasController < ApplicationController
         @kombuchas = current_user.kombuchas.alcohol
     end
 
+
     private
 
     def set_kombucha

@@ -2,7 +2,7 @@ class FlavorsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @flavors = current_user.flavors.uniq
+        @flavors = current_user.flavors.order(:name)
     end
 
     def new
